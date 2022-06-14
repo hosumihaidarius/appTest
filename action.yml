@@ -1,0 +1,13 @@
+name: 'Run tests'
+description: 'Runs the app tests'
+
+runs:
+  using: 'composite'
+  steps:
+
+    - run: pip install -r requirements.txt
+      shell: bash
+
+    - id : main
+      run: pytest tests/smoke/test_smoke_suite.py 
+      shell : bash
